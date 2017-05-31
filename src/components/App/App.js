@@ -61,7 +61,8 @@ export const App = ({ quizzes }) => {
                           <input  key={index}
                                   className='radio'
                                   type='radio'
-                                  name={question.id}/>
+                                  name={question.id}
+                                  value={answer.score}/>
                           {answer.title}
                         </div>
                       )
