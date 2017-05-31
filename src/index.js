@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App/App';
+import AppContainer from './containers/AppContainer';
+import { getQuizzes } from './actions/index.js';
 import thunk  from 'redux-thunk'
 import './index.css';
 
@@ -16,10 +17,11 @@ const enhancers = compose(
 )
 
 const store = createStore(reducers, {}, enhancers)
+store.dispatch(getQuizzes())
 
 render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById('root')
 );
